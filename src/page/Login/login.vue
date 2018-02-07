@@ -26,7 +26,7 @@
             <y-button text="登陆"
                       :classStyle="ruleForm.userPwd&& ruleForm.userName?'main-btn':'disabled-btn'"
                       @btnClick="login"
-                      style="margin: 0;width: 100%;height: 48px;font-size: 18px;line-height: 48px"></y-button>
+                      :style="loginRegistBtnStyle"></y-button>
           </div>
         </div>
         <div class="registered" v-else>
@@ -59,7 +59,7 @@
               <y-button
                 :classStyle="registered.userPwd&&registered.userPwd2&&registered.userName?'main-btn':'disabled-btn'"
                 text="注册"
-                style="margin: 0;width: 100%;height: 48px;font-size: 18px;line-height: 48px"
+                :style="loginRegistBtnStyle"
                 @btnClick="regist"
               >
               </y-button>
@@ -100,6 +100,13 @@
           userPwd: '',
           userPwd2: '',
           errMsg: ''
+        },
+        loginRegistBtnStyle: {
+          margin: 0,
+          width: '100%',
+          height: '48px',
+          fontSize: '18px',
+          lineHeight: '48px'
         }
       }
     },
